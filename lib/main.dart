@@ -17,6 +17,7 @@ class LearningApp extends StatelessWidget {
                 color: Colors.teal,
                 fontFamily: 'sans-serif',
                 fontWeight: FontWeight.bold,
+                fontSize: 56.0
               ),
             ),
           ),
