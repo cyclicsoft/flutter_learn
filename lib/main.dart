@@ -10,7 +10,12 @@ class LearningApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hello App',
       home: Text(
-        'Hello World'
+        'Hello World',
+        style: TextStyle(
+          color: Colors.teal,
+          fontFamily: 'sans-serif',
+          fontWeight: FontWeight.bold,
+        ),
       )
     );
   }
