@@ -9,14 +9,17 @@ class LearningApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hello App',
-      home: Text(
-        'Hello World',
-        style: TextStyle(
-          color: Colors.teal,
-          fontFamily: 'sans-serif',
-          fontWeight: FontWeight.bold,
-        ),
-      )
-    );
+        home: Scaffold(
+          body: Center(
+            child: Text(
+              'Hello World',
+              style: TextStyle(
+                color: Colors.teal,
+                fontFamily: 'sans-serif',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ));
   }
 }
