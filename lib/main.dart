@@ -12,26 +12,14 @@ class LearningApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.teal,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Learn Flutter'),
-          ),
-          body: Center(
-            child: Text(
-              'Hello World',
-              style: TextStyle(
-                color: Colors.teal,
-                fontFamily: 'sans-serif',
-                fontWeight: FontWeight.bold,
-                fontSize: 56.0
-              ),
-            ),
-          ),
-        ));
+        home: HomePage()
+    );
   }
 }
 
 class HomePage extends StatefulWidget{
+  HomePage({Key key}): super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -39,7 +27,21 @@ class HomePage extends StatefulWidget{
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Learn Flutter'),
+      ),
+      body: Center(
+        child: Text(
+          'Hello World!',
+          style: TextStyle(
+              color: Colors.teal,
+              fontFamily: 'sans-serif',
+              fontWeight: FontWeight.bold,
+              fontSize: 56.0
+          ),
+        ),
+      ),
+    );
   }
 }
