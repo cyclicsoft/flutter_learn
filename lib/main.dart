@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,8 +28,13 @@ class HomePage extends StatefulWidget{
 
 class _HomePageState extends State<HomePage> {
 
-  String bodyText = "I love flutter!";
+  String _bodyText = "I love flutter";
+  void _updateBodyText() {
+    setState(() {
+      _bodyText = "pressed";
+    });
 
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +43,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Text(
-          bodyText,
+          '$_bodyText',
           style: TextStyle(
               color: Colors.teal,
               fontFamily: 'sans-serif',
@@ -44,6 +51,11 @@ class _HomePageState extends State<HomePage> {
               fontSize: 56.0
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _updateBodyText,
+        tooltip: 'Update Body Text',
+        child: Icon(Icons.update),
       ),
     );
   }
