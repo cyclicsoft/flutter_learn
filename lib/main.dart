@@ -10,6 +10,9 @@ class LearningApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hello App',
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('Learn Flutter'),
+          ),
           body: Center(
             child: Text(
               'Hello World',

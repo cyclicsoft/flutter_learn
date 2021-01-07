@@ -1,6 +1,6 @@
 # flutter_learn
 
-A flutter learning project for Android developers. Step by step.
+A step by step flutter learning project for developers.
 
 ## Getting Started
 
