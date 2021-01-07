@@ -25,6 +25,9 @@ class HomePage extends StatefulWidget{
 }
 
 class _HomePageState extends State<HomePage> {
+
+  String bodyText = "I love flutter!";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +36,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Text(
-          'Hello World!',
+          bodyText,
           style: TextStyle(
               color: Colors.teal,
               fontFamily: 'sans-serif',
