@@ -28,12 +28,20 @@ class HomePage extends StatefulWidget{
 
 class _HomePageState extends State<HomePage> {
 
-  String _bodyText = "I love flutter";
-  void _updateBodyText() {
-    setState(() {
-      _bodyText = "pressed";
-    });
+  bool toggle = true;
 
+  void _toggle() {
+    setState(() {
+      if(toggle){
+        toggle = false;
+      }else{
+        toggle = true;
+      }
+    });
+  }
+
+  _getChildWidget(){
+    return toggle? Text('A text') : ElevatedButton(onPressed: (){}, child: Text('A BUTTON'));
   }
   @override
   Widget build(BuildContext context) {
@@ -42,19 +50,11 @@ class _HomePageState extends State<HomePage> {
         title: Text('Learn Flutter'),
       ),
       body: Center(
-        child: Text(
-          '$_bodyText',
-          style: TextStyle(
-              color: Colors.teal,
-              fontFamily: 'sans-serif',
-              fontWeight: FontWeight.bold,
-              fontSize: 56.0
-          ),
-        ),
+        child: _getChildWidget(),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _updateBodyText,
-        tooltip: 'Update Body Text',
+        onPressed: _toggle,
+        tooltip: 'Toggle body',
         child: Icon(Icons.update),
       ),
     );
