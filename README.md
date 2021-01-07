@@ -24,7 +24,9 @@ Learning app renders one time and never gets updated during runtime at this poin
 he widget which have a state.
 The widget (View) who changes at runtime.
 Remember flutter never update the ui element it recreates the widgets if its view need to be updated.
-Ex. See the next commit ->
+Ex. Now HomePage widget is a stateful widget.
+why?
+Because home page ui changed on button press. That means state changes if user press on update button.
 
 
 A few resources to get you started if this is your first Flutter project:
