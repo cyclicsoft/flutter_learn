@@ -9,6 +9,9 @@ class LearningApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hello App',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
         home: Scaffold(
           appBar: AppBar(
             title: Text('Learn Flutter'),
