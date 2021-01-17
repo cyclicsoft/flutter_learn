@@ -26,23 +26,20 @@ class HomePage extends StatefulWidget{
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
+  AnimationController controller;
+  CurvedAnimation curve;
 
-  bool toggle = true;
-
-  void _toggle() {
-    setState(() {
-      if(toggle){
-        toggle = false;
-      }else{
-        toggle = true;
-      }
-    });
+  @override
+  initState(){
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2000),
+    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
-  _getChildWidget(){
-    return toggle? Text('A text') : ElevatedButton(onPressed: (){}, child: Text('A BUTTON'));
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,12 +47,23 @@ class _HomePageState extends State<HomePage> {
         title: Text('Learn Flutter'),
       ),
       body: Center(
-        child: _getChildWidget(),
+        child: Container(
+          child: Container(
+              child: FadeTransition(
+                  opacity: curve,
+                  child: FlutterLogo(
+                    size: 100.0,
+                  ),
+              ),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _toggle,
-        tooltip: 'Toggle body',
-        child: Icon(Icons.update),
+        onPressed: (){
+          controller.forward();
+        },
+        tooltip: 'Fade',
+        child: Icon(Icons.brush),
       ),
     );
   }
